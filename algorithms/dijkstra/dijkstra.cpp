@@ -5,12 +5,12 @@ std::vector<int64_t> dijkstra(
     const int64_t source_node
 )
 {
-    size_t n = graph.size();
+    std::size_t n = graph.size();
     std::vector<int64_t> distance(n, -1);
     std::vector<bool> relaxed(n, false);
 
     distance[source_node] = 0;
-    for (size_t i = 0; i < n; ++i)
+    for (std::size_t i = 0; i < n; ++i)
     {
         int64_t u = -1;
         for (int64_t j = 0; j < n; ++j)
