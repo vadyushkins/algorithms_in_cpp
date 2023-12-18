@@ -1,10 +1,8 @@
 #include <gtest/gtest.h>
-#include <iostream>
 
 #include "dijkstra.hpp"
 
-TEST(Dijkstra, Test0)
-{
+TEST(Dijkstra, Test0) {
     std::vector<std::vector<std::pair<int64_t, int64_t>>> graph = {
         {{1, 1}, {2, 1}},
         {{0, 1}, {2, 1}},
@@ -20,8 +18,7 @@ TEST(Dijkstra, Test0)
     ASSERT_EQ(distance, expected_distance);
 }
 
-TEST(Dijkstra, Test1)
-{
+TEST(Dijkstra, Test1) {
     std::vector<std::vector<std::pair<int64_t, int64_t>>> graph = {
         {{1, 1}},
         {{2, 1}},
@@ -38,8 +35,7 @@ TEST(Dijkstra, Test1)
     ASSERT_EQ(distance, expected_distance);
 }
 
-TEST(Dijkstra, Test2)
-{
+TEST(Dijkstra, Test2) {
     std::vector<std::vector<std::pair<int64_t, int64_t>>> graph = {
         {{1, 1}, {2, 1}},
         {{3, 1}},
