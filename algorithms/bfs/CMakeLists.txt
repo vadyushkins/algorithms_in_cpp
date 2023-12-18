@@ -1,0 +1,1 @@
+target_sources(${PROJECT_NAME} PUBLIC test_bfs.cpp bfs.cpp)
