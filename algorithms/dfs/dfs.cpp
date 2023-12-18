@@ -3,10 +3,10 @@
 std::vector<bool> &dfs(
     const std::vector<std::vector<int64_t>> &graph,
     std::vector<bool> &reachable,
-    int node
+    int64_t node
 ) {
     reachable[node] = true;
-    for (int neighbour : graph[node]) {
+    for (int64_t neighbour : graph[node]) {
         if (false == reachable[neighbour]) {
             dfs(graph, reachable, neighbour);
         }
