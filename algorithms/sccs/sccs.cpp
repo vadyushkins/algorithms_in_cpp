@@ -25,6 +25,13 @@ std::vector<std::vector<int64_t>> strongly_connected_components_search(
         }
     }
 
+    std::vector<std::vector<int64_t>> transposed_graph(n);
+    for (int64_t i = 0; i < n; ++i) {
+        for (int64_t j : graph[i]) {
+            transposed_graph[j].push_back(i);
+        }
+    }
+
     visited.assign(n, false);
 
     std::vector<int64_t> strongly_connected_component;
@@ -34,7 +41,7 @@ std::vector<std::vector<int64_t>> strongly_connected_components_search(
         visited[node] = true;
         strongly_connected_component.push_back(node);
 
-        for (int64_t neighbour : graph[node]) {
+        for (int64_t neighbour : transposed_graph[node]) {
             if (false == visited[neighbour]) {
                 compute_strongly_connected_component(neighbour);
             }
@@ -43,8 +50,9 @@ std::vector<std::vector<int64_t>> strongly_connected_components_search(
 
     std::vector<std::vector<int64_t>> result;
     for (int64_t i = n - 1; i >= 0; --i) {
-        if (false == visited[i]) {
-            compute_strongly_connected_component(i);
+        int64_t node = condensation_order[i];
+        if (false == visited[node]) {
+            compute_strongly_connected_component(node);
             result.emplace_back(strongly_connected_component);
             strongly_connected_component.clear();
         }
