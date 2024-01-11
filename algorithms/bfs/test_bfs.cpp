@@ -9,8 +9,6 @@ TEST(BFS, Test0) {
         {0, 1},
     };
 
-    int64_t source_node = 0;
-
     std::vector<int64_t> distance = bfs(graph, 0);
 
     std::vector<int64_t> expected_distance = {0, 1, 1};
@@ -24,8 +22,6 @@ TEST(BFS, Test1) {
         {2},
         {},
     };
-
-    int64_t source_node = 0;
 
     std::vector<int64_t> distance = bfs(graph, 0);
 
@@ -42,8 +38,6 @@ TEST(BFS, Test2) {
         {4},
         {3},
     };
-
-    int64_t source_node = 0;
 
     std::vector<int64_t> distance = bfs(graph, 0);
 

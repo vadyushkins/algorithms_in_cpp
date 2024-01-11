@@ -9,8 +9,6 @@ TEST(DFS, Test0) {
         {0, 1},
     };
 
-    int64_t source_node = 0;
-
     std::vector<bool> reachable(3, false);
     dfs(graph, reachable, 0);
 
@@ -25,8 +23,6 @@ TEST(DFS, Test1) {
         {2},
         {},
     };
-
-    int64_t source_node = 0;
 
     std::vector<bool> reachable(3, false);
     dfs(graph, reachable, 0);
@@ -44,8 +40,6 @@ TEST(DFS, Test2) {
         {4},
         {3},
     };
-
-    int64_t source_node = 0;
 
     std::vector<bool> reachable(5, false);
     dfs(graph, reachable, 0);

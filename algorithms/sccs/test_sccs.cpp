@@ -2,7 +2,7 @@
 
 #include "sccs.hpp"
 
-TEST(StrongleConnectedComponents, Test0) {
+TEST(StronglyConnectedComponents, Test0) {
     std::vector<std::vector<int64_t>> graph = {
         {1, 2},
         {0},
@@ -20,7 +20,7 @@ TEST(StrongleConnectedComponents, Test0) {
     ASSERT_EQ(strongly_connected_components, expected_strongly_connected_components);
 }
 
-TEST(StrongleConnectedComponents, Test1) {
+TEST(StronglyConnectedComponents, Test1) {
     std::vector<std::vector<int64_t>> graph = {
         {2, 3},
         {0},
@@ -40,7 +40,7 @@ TEST(StrongleConnectedComponents, Test1) {
     ASSERT_EQ(strongly_connected_components, expected_strongly_connected_components);
 }
 
-TEST(StrongleConnectedComponents, Test2) {
+TEST(StronglyConnectedComponents, Test2) {
     std::vector<std::vector<int64_t>> graph = {
         {1},
         {},
@@ -56,7 +56,7 @@ TEST(StrongleConnectedComponents, Test2) {
     ASSERT_EQ(strongly_connected_components, expected_strongly_connected_components);
 }
 
-TEST(StrongleConnectedComponents, Test3) {
+TEST(StronglyConnectedComponents, Test3) {
     std::vector<std::vector<int64_t>> graph = {
         {1},
         {2},
@@ -74,7 +74,7 @@ TEST(StrongleConnectedComponents, Test3) {
     ASSERT_EQ(strongly_connected_components, expected_strongly_connected_components);
 }
 
-TEST(StrongleConnectedComponents, Test4) {
+TEST(StronglyConnectedComponents, Test4) {
     std::vector<std::vector<int64_t>> graph = {
         {},
         {},
