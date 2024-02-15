@@ -1,0 +1,1 @@
+target_sources(${PROJECT_NAME} PUBLIC test_binary_heap.cpp)
