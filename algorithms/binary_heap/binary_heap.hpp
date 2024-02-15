@@ -91,12 +91,14 @@ struct BinaryHeap {
     }
 
     void remove(size_t key) {
-        std::swap(
-            this->container->begin()[key],
-            this->container->begin()[this->container->size() - 1]
-        );
-        this->container->pop_back();
-        this->sift_down(key);
+        if (this->container->size() > key) {
+            std::swap(
+                this->container->begin()[key],
+                this->container->begin()[this->container->size() - 1]
+            );
+            this->container->pop_back();
+            this->sift_down(key);
+        }
     }
 
     void pop() {
@@ -104,7 +106,7 @@ struct BinaryHeap {
     }
 
     void change(size_t key, T new_value) {
-        if (this->container->begin()[key] != new_value) {
+        if (this->container->size() > key && this->container->begin()[key] != new_value) {
             this->container->begin()[key] = new_value;
             if (
                 key > 0 &&
